@@ -5,9 +5,26 @@ import Navbar from "~/components/Navbar"
 const Upload = () => {
   const [isProcessing, setIsProcessing] = useState(false)
   const [statusText, setStatusText] = useState("")
+  const [file, setFile] = useState<File | null>(null)
+
+  const handleFileSelect = (file: File | null) => {
+    setFile(file)
+  }
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-  
+    e.preventDefault()
+
+    const form = e.currentTarget.closest("form")
+    if (!form) return
+
+    const formData = new FormData(form)
+
+    const companyName = formData.get("company-name") as string
+    const jobTitle = formData.get("job-title") as string
+    const jobDescription = formData.get("job-description") as string
+
+    console.log({ companyName, jobTitle, jobDescription, file })
+
   }
 
   return (
@@ -16,16 +33,15 @@ const Upload = () => {
 
       <section className="main-section">
         <div className="page-heading py-16">
-          <h1>Smart Feedback for your dream job</h1>
+          <h1 className="!text-5xl">Smart Feedback for your dream job</h1>
           {isProcessing ? (
             <>
-              <h2>{statusText}</h2>
+              <h2 className="!text-2xl">{statusText}</h2>
               <img src="/images/resume-scan.gif" alt="loading" className="w-full" />
             </>
           ) : (
             <>
-              <h2>Drop your resume for an ATS score and improvement tips</h2>
-
+              <h2 className="!text-2xl">Drop your resume for an ATS score and improvement tips</h2>
             </>
           )}
 
@@ -48,7 +64,7 @@ const Upload = () => {
 
               <div className="form-div">
                 <label htmlFor="uploader">Upload Resume</label>
-                <FileUploader />
+                <FileUploader onFileSelect={handleFileSelect} />
               </div>
 
               <button className="primary-button" type="submit">
