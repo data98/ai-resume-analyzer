@@ -99,7 +99,7 @@ const Upload = () => {
           {isProcessing ? (
             <>
               <h2 className="!text-2xl">{statusText}</h2>
-              <img src="/images/resume-scan.gif" alt="loading" className="w-full" />
+              <img src="/images/resume-scan.gif" alt="loading" className="w-[20%]" />
             </>
           ) : (
             <>

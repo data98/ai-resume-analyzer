@@ -84,7 +84,9 @@ const Resume = () => {
               <Details feedback={feedback} />
             </div>
           ) : (
-            <img src="/images/resume-scan-2.gif" alt="loading" className="w-full" />
+            <div className="flex items-center justify-center h-full">
+              <img src="/images/resume-scan-2.gif" alt="loading" className="w-[40%]" />
+            </div>
           )}
         </section>
       </div>
