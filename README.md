@@ -1,87 +1,44 @@
-# Welcome to React Router!
+# Resumind - AI Resume Analyzer
 
-A modern, production-ready template for building full-stack React applications using React Router.
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+An intelligent platform that analyzes resumes against job descriptions to provide actionable feedback, ATS scores, and improvement tips.
 
 ## Features
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+- **AI Feedback**: Detailed analysis of your resume content, structure, and skills.
+- **ATS Scoring**: Get a realistic ATS compatibility score for specific job titles.
+- **Visual Insights**: Dynamic score gauges and summaries for quick assessment.
+- **PDF Processing**: Seamless PDF-to-image conversion for AI vision analysis.
+- **Modern UI**: Clean, responsive interface built with Tailwind CSS 4.
+
+## Tech Stack
+
+- **Framework**: [React Router 7](https://reactrouter.com/) (Vite-based)
+- **Backend / Cloud**: [Puter.js](https://puter.com/) (Authentication, FS, KV, AI)
+- **State Management**: [Zustand](https://zustand.docs.pmnd.rs/)
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
+- **PDF Library**: [PDF.js](https://mozilla.github.io/pdf.js/)
 
 ## Getting Started
 
-### Installation
-
-Install the dependencies:
-
+### 1. Installation
 ```bash
 npm install
 ```
 
-### Development
-
-Start the development server with HMR:
-
+### 2. Development
 ```bash
 npm run dev
 ```
 
-Your application will be available at `http://localhost:5173`.
-
-## Building for Production
-
-Create a production build:
-
+### 3. Build
 ```bash
 npm run build
 ```
 
-## Deployment
+## Project Structure
 
-### Docker Deployment
+- `app/routes/`: Main application pages (`home`, `upload`, `resume`).
+- `app/components/`: Reusable UI components (`ScoreGauge`, `FileUploader`, `Navbar`).
+- `app/lib/`: Custom utilities and library integrations.
+- `public/`: Static assets and PDF.js worker.
 
-To build and run using Docker:
-
-```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
-```
-
-The containerized application can be deployed to any platform that supports Docker, including:
-
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
-
----
-
-Built with ❤️ using React Router.
