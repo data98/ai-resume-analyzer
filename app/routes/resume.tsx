@@ -50,7 +50,7 @@ const Resume = () => {
   }, [id])
 
   return (
-    <main className="!pt-0">
+    <main className="md:!pt-0 pt-16">
       <Link to="/" className="back-button absolute fixed top-4 left-4 bg-white w-fit z-50">
         <img src="/icons/back.svg" alt="logo" className="w-2.5 h-2.5" />
         <span className="text-gray-800 text-sm font-semibold">Back to Homepage</span>
